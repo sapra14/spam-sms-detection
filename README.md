@@ -21,6 +21,38 @@ spam-sms-detection/
 ├── requirements.txt            # List of required Python libraries
 └── .gitignore                  # Ignored files and folders
 
+IMPLEMENTATION
+1.Importing Libraries:
+Libraries like pandas, numpy, sklearn, matplotlib, and pickle are used for data manipulation, machine learning, model evaluation, and saving/loading the model.
+
+2.Loading Data:
+The dataset (spam.csv) is loaded into a DataFrame. It contains two columns: v1 (label: "ham" or "spam") and v2 (SMS text). The DataFrame is renamed to label and text for better clarity.
+
+3.Preprocessing:
+Labels are mapped to numerical values: 0 for "ham" and 1 for "spam".
+X contains the text messages, and y contains the corresponding labels.
+
+4.Splitting Data:
+The data is split into training (80%) and testing (20%) sets using train_test_split.
+
+5.Vectorization:
+Text data is converted into numeric form using TF-IDF (Term Frequency-Inverse Document Frequency) vectorization, which is applied on both the training and test datasets.
+
+6.Model Training:
+A Logistic Regression model is trained using the vectorized text data (X_train_vec) and the corresponding labels (y_train).
+
+7.Evaluation:
+The model’s performance is evaluated using the classification_report and a confusion matrix. The confusion matrix is visualized and saved as an image.
+
+8.Saving the Model:
+Both the trained model and the vectorizer are saved as .pkl files using pickle, allowing the model to be reloaded and used later.
+
+9.Prediction Function:
+The predict_spam function takes user input, vectorizes it, and predicts whether the text is "Spam" or "Ham".
+
+10,User Input:
+When the script is run, it prompts the user for a text message and then classifies it as either "Spam" or "Ham" using the trained model.
+
 
 Key Features
 1.TF-IDF Feature Extraction
